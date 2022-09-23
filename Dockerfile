@@ -19,6 +19,8 @@ ENV PYTHONPATH ${FLOWER_DATA_DIR}
 
 WORKDIR $FLOWER_DATA_DIR
 
+COPY conf/celeryconfig.py $FLOWER_DATA_DIR/celeryconfig.py
+
 # Add a user with an explicit UID/GID and create necessary directories
 RUN set -eux; \
     addgroup -g 1000 flower; \
